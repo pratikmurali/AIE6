@@ -4,7 +4,7 @@ from typing import List, Tuple, Callable
 from aimakerspace.openai_utils.embedding import EmbeddingModel
 import asyncio
 
-
+### Cosine Similarity ###
 def cosine_similarity(vector_a: np.array, vector_b: np.array) -> float:
     """Computes the cosine similarity between two vectors."""
     dot_product = np.dot(vector_a, vector_b)
@@ -12,6 +12,14 @@ def cosine_similarity(vector_a: np.array, vector_b: np.array) -> float:
     norm_b = np.linalg.norm(vector_b)
     return dot_product / (norm_a * norm_b)
 
+###  euclidean distance ###
+def euclidean_distance(vector_a: np.array, vector_b: np.array) -> float:
+    return np.linalg.norm(vector_a - vector_b)
+
+### manhattan distance ###
+### write a function that takes two vectors (np arrays) and calculates the manhattan distance between them
+def manhattan_distance(vector_a: np.array, vector_b: np.array) -> float:
+    return np.sum(np.abs(vector_a - vector_b))  
 
 class VectorDatabase:
     def __init__(self, embedding_model: EmbeddingModel = None):
