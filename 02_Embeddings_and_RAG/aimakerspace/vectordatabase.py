@@ -26,6 +26,7 @@ class VectorDatabase:
         self.vectors = defaultdict(np.array)
         self.embedding_model = embedding_model or EmbeddingModel()
 
+    
     def insert(self, key: str, vector: np.array) -> None:
         self.vectors[key] = vector
 
@@ -56,6 +57,36 @@ class VectorDatabase:
         return self.vectors.get(key, None)
 
     async def abuild_from_list(self, list_of_text: List[str]) -> "VectorDatabase":
+        """
+        Asynchronously builds a vector database from a list of text documents.
+        
+        This method performs the following operations:
+        1. Asynchronously generates embeddings for all provided text documents
+        2. Associates each text with its corresponding embedding vector
+        3. Inserts each text-embedding pair into the vector database
+        
+        Using async processing allows for efficient batch processing of embeddings,
+        which is particularly valuable when working with large document collections.
+        
+        Parameters
+        ----------
+        list_of_text : List[str]
+            A list of text documents to be embedded and stored in the database.
+            Each text will be used as the key for its corresponding embedding vector.
+            
+        Returns
+        -------
+        VectorDatabase
+            The current instance of the VectorDatabase with the new vectors added,
+            allowing for method chaining.
+            
+        Examples
+        --------
+        >>> vector_db = VectorDatabase()
+        >>> texts = ["Document 1 content", "Document 2 content", "Document 3 content"]
+        >>> vector_db = asyncio.run(vector_db.abuild_from_list(texts))
+        >>> # Now database contains embeddings for all documents
+        """
         embeddings = await self.embedding_model.async_get_embeddings(list_of_text)
         for text, embedding in zip(list_of_text, embeddings):
             self.insert(text, np.array(embedding))
