@@ -1,0 +1,6 @@
+1. Introduction to the new research paper
+2. Key highlights of the research
+3. Details on extending context length
+4. Innovation in training technique (QLoRA)
+5. Performance results and applications
+6. Conclusion and call to action

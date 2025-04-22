@@ -1,0 +1,13 @@
+🚀 Exciting news in the world of AI! 🌟 
+
+I’m thrilled to share that we have successfully extended the context length of Llama-3-8B-Instruct from 8K to an impressive 80K! 🎉 This groundbreaking achievement was made possible through efficient Quantization-aware Low-Rank Adaptation (QLoRA) fine-tuning, completing the entire training cycle in just 8 hours on a powerful 8xA800 (80G) GPU machine.
+
+The newly enhanced model demonstrates remarkable performance across various tasks, including natural language understanding, topic retrieval, and long-context processing, while still maintaining its original capabilities over shorter contexts. This significant extension was primarily driven by 3.5K synthetic training samples generated through GPT-4, showcasing the untapped potential of large language models (LLMs) in expanding their context lengths.
+
+We believe that with additional computational resources, the context length can be extended even further! 💡 To support future research and collaboration, we’re excited to announce that we will publicly release all resources related to this project, including data, models, and training codes.  
+
+Join us in exploring the future of long-context LLM capabilities! More details here: [Link to GitHub](https://github.com/FlagOpen/FlagEmbedding).  
+
+#AI #MachineLearning #LongContext #Llama3 #QLoRA #Innovation #Research
+
+Feel free to share your thoughts or ask questions about this exciting development!

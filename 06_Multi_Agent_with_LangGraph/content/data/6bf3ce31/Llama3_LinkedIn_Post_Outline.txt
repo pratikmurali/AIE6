@@ -1,0 +1,7 @@
+1. Introduction to Llama-3-8B-Instruct context length extension
+2. Technical details of QLoRA fine-tuning
+3. Performance improvements across various tasks
+4. Significance of synthetic training samples
+5. Future potential for context length extension
+6. Public release of resources for collaboration
+7. Call to action and engagement with the community
