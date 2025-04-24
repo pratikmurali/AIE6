@@ -1,5 +1,13 @@
 # 🧑‍💻 What is [AI Engineering](https://maven.com/aimakerspace/ai-eng-bootcamp)?
 
+<p align="center" draggable="false">
+<img src="https://i.imgur.com/fTLO44k.png" 
+     width="1000px"
+     height="auto"/>
+</p>
+
+Learn more about [The AI Engineering Bootcamp!](https://aimakerspace.io/the-ai-engineering-bootcamp/)
+
 AI Engineering refers to the industry-relevant skills that data science and engineering teams need to successfully **build, deploy, operate, and improve Large Language Model (LLM) applications in production environments**.  
 
 In practice, this requires understanding both prototyping and production deployments.
