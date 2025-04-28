@@ -12,6 +12,113 @@
 
 In today's assignment, we'll be creating Synthetic Data, and using it to benchmark (and improve) a LCEL RAG Chain.
 
+#### ❓🙋🏽‍♂️ Question and Answers
+
+#### ❓ Question: 
+Describe in your own words what a "trace" is.
+#### 📍 Answer
+<b>Logging</b> records specific events or messages within a single service. <b>Tracing</b>, on the other hand, tracks the journey of a request or transaction as it flows through multiple services in an agentic system, offering end-to-end visibility and helping to identify performance bottleneck. The journey of every request is called a trace.
+
+#### ❓ Question: 
+
+Describe *how* each of the above metrics are calculated. This will require you to read the documentation for each metric.
+
+##### 👨🏽‍💻 Tool Call Accuracy Metric
+
+<b>How it's calculated:</b>
+The metric examines each tool call in a conversation trace
+It compares the name of the tool called and the arguments passed to expected/reference tool calls
+By default, it uses exact string matching for comparing tool names and arguments
+The metric returns a score between 0 and 1:
+<ul>
+   <li> 1: Perfect match - the model called the correct tools with the correct arguments in the correct order </li>
+   <li> 0: No match - the model called different tools or used incorrect arguments </li>
+</ul>
+The tool call accuracy can be customized to use similarity metrics instead of exact matching. For example, the documentation mentions you can use <b>NonLLMStringSimilarity()</b> as the arg_comparison_metric to better handle natural language strings in arguments.
+<pre>
+<code language="python">
+metric = ToolCallAccuracy()
+metric.arg_comparison_metric = NonLLMStringSimilarity()
+</code>
+</pre>
+This metric is particularly important for agent systems as it directly measures if the model is effectively invoking the tools it has access to.
+
+##### 👨🏽‍💻 Agent Goal Accuracy Metric
+
+<b> How it's calculated: </b>
+The metric can be calculated in two ways:
+<ul>
+<li> <b>1. With reference (AgentGoalAccuracyWithReference):</b>
+<ul>
+<li>Requires user_input (conversation trace) and reference (ideal outcome)</li>
+<li>An LLM evaluator compares the final state of the conversation with the reference</li>
+<li>The evaluator determines if the agent achieved the goal specified in the reference
+Returns 1 if the goal was achieved, 0 if not </li>
+</ul>
+</li>
+<li> <b>2. Without reference (AgentGoalAccuracyWithoutReference): </b>
+<ul>
+<li>Only requires user_input (conversation trace)</li>
+<li>The desired outcome is inferred from the human interactions in the workflow</li>
+<li>An LLM evaluator analyzes the conversation to determine if the apparent goal was achieved
+Returns 1 if the goal was achieved, 0 if not</li>
+</ul>
+</ul>
+In both cases, the evaluation is performed by an LLM which acts as a judge to determine if the agent successfully accomplished what the user asked for.
+
+
+##### 👨🏽‍💻 Topic Adherence Metric
+
+<b> How it's calculated: </b>
+The metric requires:
+<ul>
+<li>user_input (conversation trace)</li>
+<li>reference_topics (list of topics the agent should adhere to)</li>
+</ul>
+It calculates three scores:
+<ul>
+<li><b>Precision:</b> Proportion of answered queries that adhere to reference topics </li>
+<pre>
+    Precision = (Queries answered that adhere to reference topics) / (Total queries answered)
+</pre> </li>
+<li> <b>Recall:</b> Proportion of on-topic queries that were correctly answered (not refused)
+<pre>
+   Recall = (Queries answered that adhere to reference topics) / (Queries answered that adhere to reference topics + Queries refused that should have been answered)
+</pre>
+</li>
+<li>
+<b>F1 Score:</b> Harmonic mean of precision and recall
+<pre>
+ F1 Score = 2 * (Precision * Recall) / (Precision + Recall)
+</pre>
+</li>
+</ul>
+The default metric reported depends on the mode parameter, which can be set to "precision", "recall", or "f1".
+The scoring is done by an LLM that examines the conversation and determines whether each exchange adheres to the specified reference topics.
+
+When evaluated on our example in the notebook where an eagle question was asked of a metals-focused agent, the Topic Adherence score was 0 because the conversation went entirely off-topic into bird flight speeds rather than staying on the topic of metals.
+
+
+#### ❓ Question: 
+
+Which system performed better, on what metrics, and why?
+
+#### 📍 Answer
+
+I did not observe a significant improvement in the system with the Cohere reranking introduced. The context_recall and answer_relevancy metrics were almost similar. After reranking: The faithfulness and context_entity recall scores seem to have gone up slightly while, the factual_correctness and noise_sensitivity_relevant scores went down!
+
+##### RAGA metrics Without Cohere Rerank
+
+{<b>'context_recall': 0.7514 </b>, 'faithfulness': 0.7772, 'factual_correctness': 0.5833, <b> 'answer_relevancy': 0.8026 </b>, 'context_entity_recall': 0.5160, 'noise_sensitivity_relevant': 0.2841}
+
+
+##### RAGA metrics With Cohere Rerank
+
+{<b>'context_recall': 0.7514 </b>, <span style="background-color: #90EE90">
+'faithfulness': 0.7963</span>, <span style="background-color: orange"> 'factual_correctness': 0.5075 </span>, <b> 'answer_relevancy': 0.8014 </b>, <span style="background-color: #90EE90"> 'context_entity_recall': 0.5402 </span>, <span style="background-color: orange"> 'noise_sensitivity_relevant': 0.2669 </span>}
+
+
+
 - 🤝 Breakout Room #1
   1. Task 1: Installing Required Libraries
   2. Task 2: Set Environment Variables
