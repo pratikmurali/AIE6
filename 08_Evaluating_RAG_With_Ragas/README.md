@@ -105,17 +105,26 @@ Which system performed better, on what metrics, and why?
 
 #### 📍 Answer
 
-I did not observe a significant improvement in the system with the Cohere reranking introduced. The context_recall and answer_relevancy metrics were almost similar. After reranking: The faithfulness and context_entity recall scores seem to have gone up slightly while, the factual_correctness and noise_sensitivity_relevant scores went down!
+After Cohere reranking.The answer relevancy and noise sensitivity metrics improved.
 
 ##### RAGA metrics Without Cohere Rerank
 
-{<b>'context_recall': 0.7514 </b>, 'faithfulness': 0.7772, 'factual_correctness': 0.5833, <b> 'answer_relevancy': 0.8026 </b>, 'context_entity_recall': 0.5160, 'noise_sensitivity_relevant': 0.2841}
+<span style="background-color: #90EE90">'context_recall': 0.7514,</span> 
+<span style="background-color: #90EE90">'faithfulness': 0.7772, </span>
+<span style="background-color: #90EE90">'factual_correctness': 0.5833,</span>
+<span style="background-color: orange"> 'answer_relevancy': 0.8026,</span> 
+<span style="background-color: #90EE90"> 'context_entity_recall': 0.5160,</span>
+<span style="background-color: orange">'noise_sensitivity_relevant': 0.2841</span>
 
 
 ##### RAGA metrics With Cohere Rerank
 
-{<b>'context_recall': 0.7514 </b>, <span style="background-color: #90EE90">
-'faithfulness': 0.7963</span>, <span style="background-color: orange"> 'factual_correctness': 0.5075 </span>, <b> 'answer_relevancy': 0.8014 </b>, <span style="background-color: #90EE90"> 'context_entity_recall': 0.5402 </span>, <span style="background-color: orange"> 'noise_sensitivity_relevant': 0.2669 </span>}
+<span style="background-color: orange"> 'context_recall': 0.6503, </span>
+<span style="background-color: orange">'faithfulness': 0.6810, </span>
+<span style="background-color: orange">'factual_correctness': 0.5342, </span>
+<span style="background-color: #90EE90">'answer_relevancy': 0.8717, </span>
+<span style="background-color: orange">'context_entity_recall': 0.4048,</span>
+<span style="background-color: #90EE90">'noise_sensitivity_relevant': 0.2516</span>
 
 
 
