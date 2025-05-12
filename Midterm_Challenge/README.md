@@ -60,3 +60,7 @@ chainlit run main.py
 - `docs/cybersecurity/`: Folder containing cybersecurity PDF documents
 - `requirements.txt`: List of required packages
 - `chainlit.md`: Introduction information displayed in the Chainlit UI
+
+## Gold Test Datasets
+- Gold Test Dataset for Cybersecurity RAG : https://huggingface.co/datasets/pratikmurali/FDA_Cybersecurity_Golden_Dataset
+- Gold Test Dataset for FDA Regulatory Submission for SAMD RAG : https://huggingface.co/datasets/pratikmurali/fda_samd_regulations_golden_test_dataset
