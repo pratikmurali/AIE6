@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8" />
+<meta name="description" content="Data breaches cost $4.88M globally in 2024. Learn how SOCs, AI, and Tripwire boost cybersecurity defenses and reduce incident response time." />
+<link rel="canonical" href="https://www.tripwire.com/state-of-security/what-is-a-security-operations-center-soc" />
+<meta name="robots" content="index, follow" />
+<meta property="og:title" content="What Is a Security Operations Center (SOC)?" />
+<meta property="og:description" content="Data breaches cost $4.88M globally in 2024. Learn how SOCs, AI, and Tripwire boost cybersecurity defenses and reduce incident response time." />
+<meta property="og:image" content="https://www.tripwire.com/sites/default/files/styles/og_image/public/2025-02/inside-the-nerve-center-what-is-a-security-operations-center-soc.jpg?itok=EYh6KY1g" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="678" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="What Is a Security Operations Center (SOC)?" />
+<meta name="twitter:description" content="Data breaches cost $4.88M globally in 2024. Learn how SOCs, AI, and Tripwire boost cybersecurity defenses and reduce incident response time." />
+<meta name="twitter:image" content="https://www.tripwire.com/sites/default/files/styles/og_image/public/2025-02/inside-the-nerve-center-what-is-a-security-operations-center-soc.jpg?itok=EYh6KY1g" />
+<meta name="Generator" content="Drupal 10 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="title" content="What Is a Security Operations Center (SOC)? | Tripwire" />
+<meta name="contentgroup1" content="Tripwire" />
+<meta name="contentgroup2" content="Tripwire" />
+<meta http-equiv="x-ua-compatible" content="ie=edge" />
+<script type="application/ld+json">{
+    "@context": "https://schema.org/",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "id": "https://www.tripwire.com/state-of-security/what-is-a-security-operations-center-soc"
+    },
+    "headline": "What Is a Security Operations Center (SOC)? | Tripwire",
+    "description": "Data breaches cost $4.88M globally in 2024. Learn how SOCs, AI, and Tripwire boost cybersecurity defenses and reduce incident response time.",
+    "image": "https://www.tripwire.com/sites/default/files/styles/og_image/public/2025-02/inside-the-nerve-center-what-is-a-security-operations-center-soc.jpg?itok=EYh6KY1g",
+    "author": [
+        {
+            "@type": "Person",
+            "name": "Kirsten Doyle",
+            "url": "https://www.tripwire.com/profile/kirsten-doyle"
+        }
+    ],
+    "datePublished": "2025-02-04",
+    "dateModified": "2025-02-04"
+}</script>
+<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.tripwire.com/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://www.tripwire.com/state-of-security"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "What Is A Security Operations Center (SOC)?"
+        }
+    ]
+}</script>
+<link rel="icon" href="/themes/custom/tripwire/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="alternate" hreflang="en" href="https://www.tripwire.com/state-of-security/what-is-a-security-operations-center-soc" />
+
+    <link rel="icon" href="/themes/custom/fortra_parent_2022/favicon.ico" sizes="any"> <!-- REVISED (Nov 8)! -->
+  <link rel="icon" href="/themes/custom/fortra_parent_2022/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/themes/custom/fortra_parent_2022/apple-touch-icon.png"/>
+  <link rel="manifest" href="/themes/custom/fortra_parent_2022/manifest.json">
+      <title>What Is a Security Operations Center (SOC)? | Tripwire</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_uQyHKOa-jpjfohwcokkVnO6fhW50pFwSYfKW5ZLwLKw.css?delta=0&amp;language=en&amp;theme=tripwire&amp;include=eJxlj1EOwyAMQy_EytQLoaSkFI0SlAR1vf34W9V-5tlWbCQzkkDfxkoxrLmMU32iSgLFIbOpCbSAIJLZoxDERfqOT21l2Z80FUYoL7Wz5JqeeuVIbkQHCw2EqoX5Pc_33KZh6Wq8Byy8fNTfwcVhR05jklHVzPVqvSluPIQ0ymzqo_QGZfqTqdfWsWTdKDo91Wj3CErOJLcjC90q_gCcrYP1" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_YnnL64ZITYyE_9alqUgso497UvLQCpf_ukx7AP5_diE.css?delta=1&amp;language=en&amp;theme=tripwire&amp;include=eJxlj1EOwyAMQy_EytQLoaSkFI0SlAR1vf34W9V-5tlWbCQzkkDfxkoxrLmMU32iSgLFIbOpCbSAIJLZoxDERfqOT21l2Z80FUYoL7Wz5JqeeuVIbkQHCw2EqoX5Pc_33KZh6Wq8Byy8fNTfwcVhR05jklHVzPVqvSluPIQ0ymzqo_QGZfqTqdfWsWTdKDo91Wj3CErOJLcjC90q_gCcrYP1" />
+<link rel="stylesheet" media="print" href="/sites/default/files/css/css_-rNOw7bQYTvAD3dm4x7y7_kIyt7tH4C6XXWiyYEQ8wU.css?delta=2&amp;language=en&amp;theme=tripwire&amp;include=eJxlj1EOwyAMQy_EytQLoaSkFI0SlAR1vf34W9V-5tlWbCQzkkDfxkoxrLmMU32iSgLFIbOpCbSAIJLZoxDERfqOT21l2Z80FUYoL7Wz5JqeeuVIbkQHCw2EqoX5Pc_33KZh6Wq8Byy8fNTfwcVhR05jklHVzPVqvSluPIQ0ymzqo_QGZfqTqdfWsWTdKDo91Wj3CErOJLcjC90q_gCcrYP1" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_YxFXfdXBcEPmMA4mMnFlzFpZCJmx9ktmFoJf-vYGU0k.css?delta=3&amp;language=en&amp;theme=tripwire&amp;include=eJxlj1EOwyAMQy_EytQLoaSkFI0SlAR1vf34W9V-5tlWbCQzkkDfxkoxrLmMU32iSgLFIbOpCbSAIJLZoxDERfqOT21l2Z80FUYoL7Wz5JqeeuVIbkQHCw2EqoX5Pc_33KZh6Wq8Byy8fNTfwcVhR05jklHVzPVqvSluPIQ0ymzqo_QGZfqTqdfWsWTdKDo91Wj3CErOJLcjC90q_gCcrYP1" />
+
+   
+    <!-- VWO start -->
+<link rel="preconnect" href="https://dev.visualwebsiteoptimizer.com" />
+<script type="text/javascript" id="vwoCode"></script>
+<!-- VWO end -->
+<!-- TrustArc tag start -->
+<div id="consent_blackbar"></div>
+<script async="async" src="https://consent.trustarc.com/notice?domain=helpsystems.com&c=teconsent&gtm=1&js=nj&noticeType=bb&text=true&pn=2&cookieLink=https://www.fortra.com/cookie-policy&privacypolicylink=https://www.fortra.com/privacy-policy" crossorigin=""></script>
+<script>
+    var __dispatched__ = {};
+    // Map of previously dispatched preference levels
+    /* First step is to register with the CM API to receive callbacks when a
+       preference update occurs. You must wait for the CM API
+       (PrivacyManagerAPI object) to exist on the page before registering.
+    */
+    var __i__ = self.postMessage && setInterval(function () {
+      if (self.PrivacyManagerAPI && __i__) {
+        var apiObject = {
+          PrivacyManagerAPI: {
+            action: "getConsentDecision",
+            timestamp: new Date().getTime(),
+            self: self.location.host
+          }
+        };
+        self.top.postMessage(JSON.stringify(apiObject), "*");
+        __i__ = clearInterval(__i__);
+      }
+    }, 50);
+    /*
+      Callbacks will occur in the form of a PostMessage event.
+      This code listens for the appropriately formatted PostMessage event,
+      gets the new consent decision, and then pushes the events into the GTM framework. Once the event is submitted, that consent decision is marked in the 'dispatched' map so it does not occur more than once.
+    */
+    self.addEventListener("message", function (e, d) {
+      try {
+        if (e.data && (d = JSON.parse(e.data)) && (d = d.PrivacyManagerAPI) && d.capabilities && d.action == "getConsentDecision") {
+          var newDecision = self.PrivacyManagerAPI.callApi("getGDPRConsentDecision", self.location.host).consentDecision;
+          newDecision && newDecision.forEach(function (label) {
+            if (! __dispatched__[label]) {
+              self.dataLayer && self.dataLayer.push({
+                "event": "GDPR Pref Allows " + label
+              });
+              __dispatched__[label] = 1;
+            }
+          });
+        }
+      } catch (xx) { /** not a cm api message **/
+      }
+    });
+
+    self.addEventListener("message", function(e, d) {
+      var notice_behavior = getCookie('notice_behavior');
+      var cmapi_cookie_privacy = getCookie('cmapi_cookie_privacy');
+      if ((notice_behavior.indexOf('us') > -1 && (document.cookie.indexOf('cmapi_cookie_privacy') < 0 || cmapi_cookie_privacy.indexOf(2) > -1))
+          || (notice_behavior.indexOf('eu') > -1 && cmapi_cookie_privacy.indexOf(2) > -1)) {
+          vwoConsent();
+      }
+    });
+
+    function getCookie(cname) {
+      let name = cname + "=";
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let ca = decodedCookie.split(';');
+      for(let i = 0; i <ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+
+    function vwoConsent(){
+      window._vwo_code || (function() {
+      var account_id=697207,
+      version=2.1,
+      settings_tolerance=2000,
+      hide_element='body',
+      hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important',
+      /* DO NOT EDIT BELOW THIS LINE */
+      f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+'_settings',cc={};try{var c=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=c&&typeof c==='object'?c:{}}catch(e){}var stT=cc.stT==='session'?w.sessionStorage:w.localStorage;code={nonce:v&&v.nonce,use_existing_jquery:function(){return typeof use_existing_jquery!=='undefined'?use_existing_jquery:undefined},library_tolerance:function(){return typeof library_tolerance!=='undefined'?library_tolerance:undefined},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){if(performance.getEntriesByName('first-contentful-paint')[0]){return''}return typeof cc.hE==='string'?cc.hE:hide_element},getVersion:function(){return version},finish:function(e){if(!f){f=true;var t=d.getElementById('_vis_opt_path_hides');if(t)t.parentNode.removeChild(t);if(e)(new Image).src='https://dev.visualwebsiteoptimizer.com/ee.gif?a='+account_id+e}},finished:function(){return f},addScript:function(e){var t=d.createElement('script');t.type='text/javascript';if(e.src){t.src=e.src}else{t.text=e.text}v&&t.setAttribute('nonce',v.nonce);d.getElementsByTagName('head')[0].appendChild(t)},load:function(e,t){var n=this.getSettings(),i=d.createElement('script'),r=this;t=t||{};if(n){i.textContent=n;d.getElementsByTagName('head')[0].appendChild(i);if(!w.VWO||VWO.caE){stT.removeItem(cK);r.load(e)}}else{var o=new XMLHttpRequest;o.open('GET',e,true);o.withCredentials=!t.dSC;o.responseType=t.responseType||'text';o.onload=function(){if(t.onloadCb){return t.onloadCb(o,e)}if(o.status===200||o.status===304){_vwo_code.addScript({text:o.responseText})}else{_vwo_code.finish('&e=loading_failure:'+e)}};o.onerror=function(){if(t.onerrorCb){return t.onerrorCb(e)}_vwo_code.finish('&e=loading_failure:'+e)};o.send()}},getSettings:function(){try{var e=stT.getItem(cK);if(!e){return}e=JSON.parse(e);if(Date.now()>e.e){stT.removeItem(cK);return}return e.s}catch(e){return}},init:function(){if(d.URL.indexOf('__vwo_disable__')>-1)return;var e=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){_vwo_code.finish();stT.removeItem(cK)},e);var t;if(this.hide_element()!=='body'){t=d.createElement('style');var n=this.hide_element(),i=n?n+this.hide_element_style():'',r=d.getElementsByTagName('head')[0];t.setAttribute('id','_vis_opt_path_hides');v&&t.setAttribute('nonce',v.nonce);t.setAttribute('type','text/css');if(t.styleSheet)t.styleSheet.cssText=i;else t.appendChild(d.createTextNode(i));r.appendChild(t)}else{t=d.getElementsByTagName('head')[0];var i=d.createElement('div');i.style.cssText='z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;display: block !important;';i.setAttribute('id','_vis_opt_path_hides');i.classList.add('_vis_hide_layer');t.parentNode.insertBefore(i,t.nextSibling)}var o=window._vis_opt_url||d.URL,s='https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(o)+'&vn='+version;if(w.location.search.indexOf('_vwo_xhr')!==-1){this.addScript({src:s})}else{this.load(s+'&x=true')}}};w._vwo_code=code;code.init();})();
+    }
+</script>
+      <!-- start Omniconvert.com code -->
+      
+  <!-- Content Group 1 -->
+   <!-- End Content Group 2 -->
+    <!-- Google Tag Manager start -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NMS49C8');</script>
+  <!-- Google Tag Manager end -->
+    
+</head>
+<body class="layout-no-sidebars page-node-25381 path-node node--type-blog">
+    <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMS49C8" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+    <a href="#main-content" class="visually-hidden focusable skip-link">
+    Skip to main content
+  </a>
+  
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    <div id="page-wrapper">
+  <div id="page">
+    <header id="header" class="header" role="banner" aria-label="Site header">
+              <nav class="navbar navbar-expand-xl">
+          <div class="logo_container">
+								<!--<span class="logo_helper"></span>-->
+            <a href="/" title="Home">
+              <span class="fortra-logo base-logo">
+									<img width="150" height="24" src="https://static.fortra.com/fortra-global-assets/fortra-logo-full.svg?l=1571248742" alt="Fortra" class="logo-full">
+									<img src="https://static.fortra.com/fortra-global-assets/fortra-logo-small.svg?l=1824483229" alt="Data Classification" data-height-percentage="54" class="logo-small">
+							</span>
+              <span class="site-logo base-logo">
+                                                <img width="180" height="50" src="/themes/custom/tripwire/images/fta-integrity-and-compliance-monitoring-light.svg" alt="Integrity and Compliance Monitoring"/>
+              </span>
+            </a>
+          </div>
+
+          <div class="d-flex d-xl-none">
+            <div class="language-switcher-language-url block block-language block-language-blocklanguage-interface" id="block-hs-languageswitcher" role="navigation">
+  
+    
+      <div class="content">
+      
+<div class="dropdown">
+  <div class="dropdown-toggle language-toggle" type="button" id="language-switcher" data-toggle="dropdown" aria-expanded="false">
+    <i class="fa-sharp fa-light fa-globe"></i>
+  </div>
+  <div class="dropdown-menu" aria-labelledby="language-switcher"><span hreflang="en" data-drupal-link-system-path="node/25381" class="en dropdown-item is-active" aria-current="page"><a href="/state-of-security/what-is-a-security-operations-center-soc" class="language-link is-active" hreflang="en" data-drupal-link-system-path="node/25381" aria-current="page">EN</a></span><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+
+    </div>
+  </div>
+
+          </div>
+
+          <button class="navbar-toggler col-2 col-md-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-close"><i class="fa-sharp fa-times" aria-hidden="true"></i></span>
+          </button>
+          <div class="collapse navbar-collapse ml-auto" id="navbarCollapse">
+            <div class="header-menus d-flex flex-fill flex-column align-items-start align-items-xl-end">
+                              <div class="ml-auto d-none d-xl-block">
+                          <section class="region region-secondary-menu ml-xl-auto d-none d-xl-flex flex-row col-12 flex-wrap align-items-center">
+      <div class="language-switcher-language-url block block-language block-language-blocklanguage-interface" id="block-hs-languageswitcher" role="navigation">
+  
+    
+      <div class="content">
+      
+<div class="dropdown">
+  <div class="dropdown-toggle language-toggle" type="button" id="language-switcher" data-toggle="dropdown" aria-expanded="false">
+    <i class="fa-sharp fa-light fa-globe"></i>
+  </div>
+  <div class="dropdown-menu" aria-labelledby="language-switcher"><span hreflang="en" data-drupal-link-system-path="node/25381" class="en dropdown-item is-active" aria-current="page"><a href="/state-of-security/what-is-a-security-operations-center-soc" class="language-link is-active" hreflang="en" data-drupal-link-system-path="node/25381" aria-current="page">EN</a></span><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+
+    </div>
+  </div>
+    <nav role="navigation" aria-labelledby="block-secondarynavigation-menu" id="block-secondarynavigation" class="block block-menu navigation menu--secondary-navigation main-menu navbar navbar-expand-xl">
+            
+  <div class="sr-only" id="block-secondarynavigation-menu">Secondary Navigation</div>
+  
+
+        
+              <ul region="secondary_menu" class="clearfix nav">
+        
+                                <li class="nav-item">
+                                          
+                      <a href="https://customers.tripwire.com/customers" target="_blank" class="nav-link">Customer Portal</a>
+                        </li>
+    
+                                <li class="nav-item">
+                                          
+                      <a href="https://partners.tripwire.com/partners/" target="_blank" class="nav-link">Partner Portal</a>
+                        </li>
+    
+                                <li class="nav-item">
+                                          
+                      <a href="/demo" class="btn btn-primary nav-link btn btn-primary" data-drupal-link-system-path="node/24236">GET A DEMO</a>
+                        </li>
+        </ul>
+  
+
+
+  </nav>
+
+    </section>
+    
+                                  </div>
+
+                <div class="header-primary ml-xl-auto d-flex flex-column flex-xl-row col-12 justify-content-xl-end">
+                    <div id="block-fortramainmenu" class="block block-fortra-core block-fortra-main-menu-block">
+  
+    
+      <div class="content">
+              <ul region="primary_menu" class="clearfix main-navigation--nav nav navbar-nav menu-level-">
+  
+                          
+      
+      <li class="fmHasChildren nav-item menu-name-products expanded dropdown">
+                          
+        
+                              <div class="btn-group">
+    <button id="mlc-2e2a1a56-1652-478b-a8af-dc26b9fdc965" type="button" class="nav-link dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Products
+    <span class="sr-only">Toggle Dropdown</span>
+    </button>
+            <ul class="dropdown-menu menu-level-1">
+  
+                          
+      
+      <li class="dropdown-item">
+        
+        
+                  <a href="/products/tripwire-enterprise" data-drupal-link-system-path="node/29512">Tripwire Enterprise</a>
+                </li>
+                              
+      
+      <li class="dropdown-item">
+        
+        
+                  <a href="/products/tripwire-expertops" data-drupal-link-system-path="node/24242">Tripwire ExpertOps</a>
+                </li>
+                              
+      
+      <li class="dropdown-item">
+        
+        
+                  <a href="/products/tripwire-ip360" data-drupal-link-system-path="node/24240">Tripwire IP360</a>
+                </li>
+                              
+      
+      <li class="dropdown-item">
+        
+        
+                  <a href="/products/tripwire-logcenter" data-drupal-link-system-path="node/24720">Tripwire LogCenter</a>
+                </li>
+                              
+      
+      <li class="dropdown-item">
+        
+        
+                  <a href="/products" class="fmButton" data-drupal-link-system-path="node/24239">View all products</a>
+                </li>
+        </ul>
+
+  </div>
+
+                </li>
+                              
+      
+      <li class="fmHasChildren nav-item menu-name-solutions expanded dropdown">
+                          
+        
+                              <div class="btn-group">
+    <button id="mlc-5f27bde2-36da-4cd4-8985-a66f48260dbc" type="button" class="nav-link dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Solutions
+    <span class="sr-only">Toggle Dropdown</span>
+    </button>
+            <ul class="dropdown-menu menu-level-1">
+  
+                          
+      
+      <li class="dropdown-item">
+        
+        
+                  <a href="/solutions/security-configuration-management" data-drupal-link-system-path="node/24269">Security Configuration Management</a>
+                </li>
+                              
+      
+      <li class="dropdown-item">
+        
+        
+                  <a href="/solutions/file-integrity-and-change-monitoring" data-drupal-link-system-path="node/24285">File Integrity and Change Monitoring</a>
+                </li>
+                              
+      
+      <li class="dropdown-item">
+        
+        
+                  <a href="/solutions/vulnerability-and-risk-management" data-drupal-link-system-path="node/24713">Vulnerability Management</a>
+                </li>
+                              
+      
+      <li class="dropdown-item">
+        
+        
+                  <a href="/solutions/cloud-cybersecurity" data-drupal-link-system-path="node/24284">Cloud</a>
+                </li>
+                              
+      
+      <li class="dropdown-item">
+        
+        
+                  <a href="/solutions/compliance" data-drupal-link-system-path="node/24686">Compliance</a>
+                </li>
+                              
+      
+      <li class="dropdown-item">
+        
+        
+                  <a href="/industries" data-drupal-link-system-path="node/24289">Industries</a>
+                </li>
+                              
+      
+      <li class="dropdown-item">
+        
+        
+                  <a href="/solutions" class="fmButton" data-drupal-link-system-path="node/24259">View all solutions</a>
+                </li>
+        </ul>
+
+  </div>
+
+                </li>
+                              
+      
+      <li class="nav-item menu-name-services">
+                          
+        
+                  <a href="/services" class="nav-link" data-drupal-link-system-path="node/24670">Services</a>
+                </li>
+                              
+      
+      <li class="fmHasChildren nav-item menu-name-resources expanded dropdown">
+                          
+        
+                              <div class="btn-group">
+    <button id="mlc-46144f54-7f55-4d11-9586-77e0a00a789b" type="button" class="nav-link dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Resources
+    <span class="sr-only">Toggle Dropdown</span>
+    </button>
+            <ul class="dropdown-menu menu-level-1">
+  
+                          
+      
+      <li class="dropdown-item">
+        
+        
+                  <a href="/resources?f%5B0%5D=type%3A1333&amp;f%5B1%5D=type%3A1340&amp;f%5B2%5D=type%3A1341" data-drupal-link-query="{&quot;f&quot;:[&quot;type:1333&quot;,&quot;type:1340&quot;,&quot;type:1341&quot;]}" data-drupal-link-system-path="resources">Upcoming Events</a>
+                </li>
+                              
+      
+      <li class="dropdown-item">
+        
+        
+                  <a href="/resources?f%5B1%5D=type%3A1339&amp;f%5B2%5D=type%3A1342" data-drupal-link-query="{&quot;f&quot;:{&quot;1&quot;:&quot;type:1339&quot;,&quot;2&quot;:&quot;type:1342&quot;}}" data-drupal-link-system-path="resources">On-Demand Webinars</a>
+                </li>
+                              
+      
+      <li class="dropdown-item">
+        
+        
+                  <a href="/resources?f%5B0%5D=type%3A1335" data-drupal-link-query="{&quot;f&quot;:[&quot;type:1335&quot;]}" data-drupal-link-system-path="resources">Datasheets</a>
+                </li>
+                              
+      
+      <li class="dropdown-item">
+        
+        
+                  <a href="/resources?f%5B0%5D=type%3A1334" data-drupal-link-query="{&quot;f&quot;:[&quot;type:1334&quot;]}" data-drupal-link-system-path="resources">Case Studies</a>
+                </li>
+                              
+      
+      <li class="dropdown-item">
+        
+        
+                  <a href="/resources?f%5B0%5D=type%3A1337" data-drupal-link-query="{&quot;f&quot;:[&quot;type:1337&quot;]}" data-drupal-link-system-path="resources">Guides</a>
+                </li>
+                              
+      
+      <li class="dropdown-item">
+        
+        
+                  <a href="/services/training" data-drupal-link-system-path="node/24680">Training</a>
+                </li>
+                              
+      
+      <li class="dropdown-item">
+        
+        
+                  <a href="/resources" class="fmButton" data-drupal-link-system-path="resources">View all resources</a>
+                </li>
+        </ul>
+
+  </div>
+
+                </li>
+                              
+      
+      <li class="nav-item menu-name-blog">
+                          
+        
+                  <a href="/state-of-security" class="nav-link" data-drupal-link-system-path="blog">Blog</a>
+                </li>
+                              
+      
+      <li class="fmHasChildren nav-item menu-name-about expanded dropdown">
+                          
+        
+                              <div class="btn-group">
+    <button id="mlc-afa1d418-2f82-498b-90c4-57929e72c84a" type="button" class="nav-link dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    About
+    <span class="sr-only">Toggle Dropdown</span>
+    </button>
+            <ul class="dropdown-menu menu-level-1">
+  
+                          
+      
+      <li class="dropdown-item">
+        
+        
+                  <a href="/about" data-drupal-link-system-path="node/24272">About</a>
+                </li>
+                              
+      
+      <li class="dropdown-item">
+        
+        
+                  <a href="https://www.fortra.com/about/careers" class="external">Careers</a>
+                </li>
+                              
+      
+      <li class="dropdown-item">
+        
+        
+                  <a href="https://www.fortra.com/about/our-leadership-team" class="external">Leadership</a>
+                </li>
+                              
+      
+      <li class="dropdown-item">
+        
+        
+                  <a href="https://www.fortra.com/about/newsroom" target="_blank" class="external">Newsroom</a>
+                </li>
+                              
+      
+      <li class="dropdown-item">
+        
+        
+                  <a href="/about/partner" data-drupal-link-system-path="node/24274">Partners</a>
+                </li>
+                              
+      
+      <li class="dropdown-item">
+        
+        
+                  <a href="/contact-us" data-drupal-link-system-path="node/24282">Contact Us</a>
+                </li>
+        </ul>
+
+  </div>
+
+                </li>
+        </ul>
+
+
+
+
+    </div>
+  </div>
+<div class="views-exposed-form bef-exposed-form block block-views block-views-exposed-filter-blocksite-search-page-1" data-bef-auto-submit-full-form="" data-bef-auto-submit="" data-bef-auto-submit-delay="500" data-drupal-selector="views-exposed-form-site-search-page-1" id="block-exposed-site-search">
+      <div class="content searchbar-form">
+      
+<form action="/search" method="get" id="views-exposed-form-site-search-page-1" accept-charset="UTF-8">
+  <div class="form-row">
+  
+
+
+
+          <fieldset class="js-form-item js-form-type-textfield form-type-textfield js-form-item-keys form-item-keys form-no-label form-group">
+          <label for="edit-keys" class="sr-only">Keywords</label>
+                    <input data-bef-auto-submit-exclude="" placeholder="Search for keywords" data-drupal-selector="edit-keys" type="text" id="edit-keys" name="keys" value="" size="30" maxlength="128" class="form-control" />
+
+                      </fieldset>
+
+
+
+
+          <fieldset class="js-form-item js-form-type-select form-type-select js-form-item-sort-bef-combine form-item-sort-bef-combine form-no-label form-group">
+          <label for="edit-sort-bef-combine" class="sr-only">Sort</label>
+                    
+<select class="form-control form-select" data-drupal-selector="edit-sort-bef-combine" id="edit-sort-bef-combine" name="sort_bef_combine"><option value="search_api_relevance_DESC" selected="selected">Best match</option><option value="published_at_DESC">Newest first</option><option value="published_at_ASC">Oldest first</option><option value="title_ASC">Title A-Z</option><option value="title_DESC">Title Z-A</option></select>
+                      </fieldset>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-group" id="edit-actions"><input data-bef-auto-submit-click="" class="search-button button js-form-submit form-submit btn btn-primary form-control" data-drupal-selector="edit-submit-site-search" type="submit" id="edit-submit-site-search" value="" data-bef-auto-submit-exclude="" />
+</div>
+
+</div>
+
+</form>
+
+    </div>
+    <div class="searchbar-icon"><i class="fa-sharp fa-search" aria-hidden="true"></i></div>
+  </div>
+
+
+                                  </div>
+                          </div>
+          </div>
+        </nav>
+          </header>
+
+    <div id="main-wrapper" class="layout-main-wrapper clearfix">
+      <div id="main" class="main">
+      
+
+
+      
+  <!--Header type = "header-5"-->
+                <header  class="jumbotron jumbotron-fluid header-5 bg-4" style="">
+                            <div class="container-md">
+            <div class="row">
+                          <div class="col-sm-12">
+                                          <div class="breadcrumbs-wrapper">
+
+  <nav role="navigation" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+          <a href="/">Home</a>
+        </li>
+                        <li class="breadcrumb-item">
+          <a href="/state-of-security">Blog</a>
+        </li>
+                        <li class="breadcrumb-item active">
+          What Is a Security Operations Center (SOC)?
+        </li>
+              </ol>
+  </nav>
+</div>
+                            <h1 class="node__title h2">
+            <div class="field field--name-field-header-title field--type-string field--label-hidden field__item">What Is a Security Operations Center (SOC)?</div>
+      </h1>
+              <div class="lead"></div>
+                                                <div class="pb-3">
+                                                                <em>Posted on February 4, 2025</em>
+                                          
+                                      </div>
+                                <div class="lead"></div>
+              </div>
+                              <div class="col-sm-4"></div>
+                          </div>
+          </div>
+              </header>
+      <!-- progress bar - currently shows only for product page-->
+      <div class="progress-bar-container">
+        <div class="progress-bar"></div>
+      </div>
+      
+
+
+
+  
+  <div class="container-fluid">
+    <div class="row row-offcanvas row-offcanvas-left clearfix">
+      <main class="main-content col order-last" id="content" role="main">
+                  <a id="main-content" tabindex="-1"></a>
+                                 <div data-drupal-messages-fallback class="hidden"></div>
+<div id="block-hs-content" class="block block-system block-system-main-block">
+  
+    
+      <div class="content">
+      
+
+<article class="node node--type-blog node--view-mode-full article-sidebar clearfix">
+    <div class="node__content clearfix d-flex flex-lg-row flex-md-column">
+        <div class="node-content-container container">
+
+      <div class="row">
+ 
+                                <div class="col-lg-8" id="toc-content">
+                              
+            <div class="field field--name-field-media field--type-entity-reference field--label-hidden field__item"><div class="media-full">
+  
+  
+  <div class="field field--name-field-media-image field--type-image field--label-visually_hidden">
+    <div class="field__label visually-hidden">Image</div>
+              <div class="field__item">  <img loading="lazy" src="/sites/default/files/2025-02/inside-the-nerve-center-what-is-a-security-operations-center-soc.jpg" width="1200" height="628" alt="Inside the Nerve Center: What Is a Security Operations Center (SOC)?" />
+
+</div>
+          </div>
+
+</div>
+</div>
+      
+                                          
+
+                    <div class="field field--name-body field--type-text-with-summary field--label-hidden section field__item"><p>Data breaches continue to cost organizations millions of dollars each year, with costs rising steadily. According to&nbsp;<a href="https://www.ibm.com/reports/data-breach" target="_blank">IBM's 2024 Cost of a Data Breach Report</a>, the average cost of a data breach has surged to $4.88 million globally, reflecting the increasing complexity and sophistication of cyberattacks. In the United States, this figure is even higher, averaging $9.8 million per breach, and the healthcare industry remains a prime target, with an average breach cost of $10 million—the highest of any sector.</p><h2>What Drives These Staggering Costs?</h2><p>Several factors contribute to these sky-high figures. One major issue is the time it takes organizations to identify and contain breaches. Another&nbsp;<a href="https://newsroom.ibm.com/2024-07-30-ibm-report-escalating-data-breach-disruption-pushes-costs-to-new-highs%23:~:text=Hacking%2520the%2520clock%2520with%2520AI&amp;text=At%2520the%2520same%2520time,%2520the,threat%2520mitigation%2520and%2520remediation%2520activities." target="_blank">IBM report</a> found that it took businesses an average of 277 days to detect and respond to a breach. This protracted window gives malefactors ample time and opportunity to infiltrate systems, escalate privileges, and exfiltrate sensitive data.</p><p>The consequences of having attackers lurking on company networks for months include increased recovery costs, regulatory fines, reputational damage, and legal fees. For entities operating in highly regulated industries like healthcare or finance, non-compliance penalties alone can account for a large chunk of the total cost. Moreover, the shift to hybrid and remote work has seen the attack surface widen, making breaches more difficult to detect and contain.</p><h2>The Value of a Security Operations Centre (SOC)</h2><p>While the odds may seem stacked against the cybersecurity industry, a Security Operations Center (SOC) can play a&nbsp;key&nbsp;role. For instance, SOCs provide 24/7 monitoring and swift incident response to protect organizations from cyber threats. By analyzing data from multiple sources in real-time, SOCs detect anomalies, identify potential attacks, and respond quickly to mitigate damage. They work closely with IT teams to validate incidents, contain breaches, and ensure remediation happens as quickly as possible. This proactive stance&nbsp;cuts downtime, limits the impact of security events, and strengthens an organization's overall defense posture.</p><p>Threat hunting is another key capability of a modern SOC, moving beyond reactive defense to uncover hidden threats before they get out of hand. This process involves tailored investigations that analyze unique organizational patterns to distinguish between legitimate and malicious activities. By using the power of machine learning, behavioral analytics, and human expertise, SOCs enhance their ability to detect sophisticated and advanced persistent threats, such as phishing campaigns targeting executives or exploitation of zero-day vulnerabilities, helping businesses stay a step ahead of adversaries.</p><p>Security Operations Centers also use analytics and correlation to provide comprehensive security visibility. By analyzing data from a slew of sources—like endpoint logs, network traffic, and user behavior—SOCs&nbsp;pinpoint patterns and anomalies that signal potential threats. Correlation tools consolidate related alerts into coherent incident narratives, cutting noise and helping teams focus on high-priority risks. This helps&nbsp;entities address complex threats, such as advanced persistent threat (APT) activities, with precision and speed.</p><h2>Addressing Challenges in SOC Operations</h2><p>However, despite their value, building and maintaining an effective SOC comes with challenges, particularly in 2024's dynamic threat landscape.</p><h3>The Cybersecurity Skills Gap</h3><p>The cybersecurity industry faces a critical talent shortage, particularly in Security Operations Centers, which serve as the nucleus for defending against advanced threats. With millions of cybersecurity roles unfilled globally, SOC teams are often understaffed and overburdened, lacking the expertise needed to analyze complex telemetry, respond swiftly to incidents, and proactively hunt for vulnerabilities.</p><p>The rapid evolution of attack vectors, fueled by adversaries leveraging AI and automation, exacerbates the challenge, requiring adaptable, highly skilled professionals.</p><h3>Tool Overload and Strategic Investments</h3><p>The&nbsp;<a href="https://siliconangle.com/2024/08/05/cybersecurity-tool-sprawl-control-going-get-worse/" target="_blank">abundance of cybersecurity tools</a> on the market creates confusion about the choice of SOC teams. Many firms buy tools reactively—often in response to a recent incident—without fully assessing their long-term needs. This approach can lead to overlapping functionalities and wasted resources.</p><p>Instead, organizations should take a strategic approach by evaluating existing controls and identifying gaps before investing in solutions. Platforms that integrate AI, SOAR (Security Orchestration, Automation, and Response), and XDR (Extended Detection and Response) capabilities provide more comprehensive and scalable protection, ensuring better ROI.</p><h2>The Path Forward for SOCs</h2><p>Organizations can adopt a long-term strategy by partnering with a trusted vendor like Fortra's Tripwire. Its comprehensive solutions arm SOC analysts with the tools they need to manage their critical tasks effectively. Take Tripwire Enterprise as an example—it monitors all assets, including operating systems, network devices, directory services, databases, and virtual infrastructure, dethttps://www.tripwire.com/ecting changes and issuing alerts when they occur.</p><p>Additionally, it evaluates systems against industry standards such as CIS, NIST, and ISO, providing a clear view of areas that need attention. Tripwire Enterprise Apps (TEIF, DSR, and Event Sender) further enhance functionality by integrating with leading ITIL change management tools. This integration helps identify changes, approve authorized updates like OS patches, report unauthorized modifications, and send detailed log data to SIEM systems for analysis.</p><p>Fortra also provides a proactive, risk-based&nbsp;<a href="/products/tripwire-ip360" target="_blank" data-entity-type="node" data-entity-uuid="6aa428f4-91fc-4d7c-a8a9-d49960628308" data-entity-substitution="canonical" title="Tripwire IP360">vulnerability management solution</a> that is crucial to any cybersecurity portfolio.&nbsp;With its robust feature set, the solution assesses and prioritizes your system weaknesses and creates easily understood reporting for efficient and effective remediation.&nbsp;&nbsp;</p><p><a href="/products/tripwire-logcenter" target="_blank" data-entity-type="node" data-entity-uuid="8ee9c35a-98d2-4dc5-9e1c-75304094411c" data-entity-substitution="canonical" title="Tripwire LogCenter - product page">Tripwire LogCenter</a>&nbsp;is a log management tool that can ingest and normalize events from devices and deployed agents. It can then generate alerts based on correlation rules that can be tailored to the environment.</p><p><a href="/solutions/industrial-control-systems" target="_blank" data-entity-type="node" data-entity-uuid="d37d7f6d-38c8-4b4e-8c34-dbf443d21ed2" data-entity-substitution="canonical" title="Industrial Solutions">Tripwire's solutions for Industrial Controls Systems</a>&nbsp;listen to the traffic on the network to help identify threats.&nbsp;Paired with Tripwire LogCenter, this gives organizations a means for capturing, normalizing and alerting on deviations from baseline.</p><p><a href="/homepage" target="_blank" data-entity-type="node" data-entity-uuid="1dd9869c-24a4-4443-b5f3-6b26986e414d" data-entity-substitution="canonical" title="Homepage - launched May 2024">Augment your SOC with Tripwire's solutions today</a>.</p></div>
+             
+                        <div class="paragraph paragraph--type--section paragraph--view-mode--default section row dark-arrow">
+        <div class="col-sm-12">
+      <div class="container">
+                                           <div class="paragraph paragraph--type--cta-group paragraph--view-mode--default">
+          
+      <div class="field field--name-field-primary-cta field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field__item">    
+      <div class="paragraph paragraph--type--cta paragraph--view-mode--default hs-page-cta cta-type--primary">
+                        <h3 class="cta-headline">
+            
+            <div class="field field--name-field-cta-headline field--type-string field--label-hidden field__item">Tripwire Enterprise: Security Configuration Management (SCM) Software</div>
+      
+          </h3>
+                          
+            <div class="clearfix text-formatted field field--name-field-cta-text field--type-text-long field--label-hidden field__item"><p>Enhance your organization's cybersecurity with Tripwire Enterprise! Explore our advanced security and compliance management solution now to protect your valuable assets and data.</p>
+</div>
+      
+                                    
+                                
+          
+          
+          <a href="/products/tripwire-enterprise"  class="btn btn-1">
+            Learn More
+          </a>
+                  </div>
+  </div>
+          </div>
+  
+      </div>
+
+
+
+
+          
+              </div>
+    </div>
+  </div>
+
+
+
+</div>
+              <div class="col-lg-4 mb-3 align-self-start resource-sidebar" id="">
+     
+      <div class="field field--name-field-author field--type-entity-reference field--label-hidden field__items">
+              <div class="field__item">
+
+<article class="node bg-7 p-3 node--type-author node--view-mode-teaser clearfix">
+  <div class="clearfix">
+    <div class="node-content-container author-sidebar container">
+		<div class="row bg-7">
+			   <div class="col-5 ">
+                     
+            <div class="field field--name-field-media field--type-entity-reference field--label-hidden field__item">  <a href="/profile/kirsten-doyle"><img loading="lazy" src="/sites/default/files/styles/thumbnail/public/2024-02/kirsten-doyle.jpg?itok=ydg6vly6" width="84" height="100" alt="Kirsten Doyle" class="image-style-thumbnail" />
+
+</a>
+</div>
+      
+         
+         </div>
+			   <div class="col-7 pl-0">
+          <div class="block-title text-uppercase author-title">
+				                				    </div>
+            <div class="block-title text-uppercase expert-title">Meet the Expert</div>
+				    <h4 class="node__title text-align-left"><a href="/profile/kirsten-doyle" rel="bookmark"><span class="field field--name-title field--type-string field--label-hidden">Kirsten Doyle</span>
+</a></h4>
+				    <div class="text-align-left text-4">
+            <div class="field field--name-field-position-title field--type-string field--label-hidden field__item">Guest Writer</div>
+      </div>
+			   </div>
+			   <div class="col-12 text-align-left">
+         
+         </div>
+			   <div class="col-12 text-center mt-2">
+         <a class="btn btn-link view-profile" href="/profile/kirsten-doyle" rel="bookmark">View Profile <span class="arrow right" aria-hidden="true"></span></a>
+         </div>
+
+			  		</div>
+    </div>
+  </div>
+</article>
+
+</div>
+          </div>
+  
+        
+                                                        
+              <div class="sidebar-content p-3 bg-7">
+          <div class="node-content-container container">
+            <div class="row">
+              <div class="col-12">
+                <div class="block-title text-uppercase">
+                    Related Products
+                </div>
+
+                                                                                                                                                                                                                                                  <a href="/products/tripwire-logcenter" class="d-block" >Tripwire LogCenter</a>
+                                                      
+                              </div>
+            </div>
+          </div>
+        </div>
+                          <div class="sidebar-content p-3 bg-7">
+          <div class="node-content-container container">
+            <div class="row">
+              <div class="col-12">
+                <div class="block-title text-uppercase">
+                    Related Solutions
+                </div>
+                                                                                                                                                                                                                                     <a href="/resources?f%5B0%5D=topic%3A2275" class="d-block" >Cybersecurity</a>
+                                                                                                                                                                                                                               <a href="/solutions/incident-detection-and-investigation" class="d-block" >Incident Detection &amp; Investigation</a>
+                                                                                                                                                                                                                                                       <a href="/solutions/security-configuration-management" class="d-block" >Security Configuration Management</a>
+                                                </div>
+            </div>
+          </div>
+        </div>
+                                <div class="sidebar-content p-3 bg-7">
+          <div class="node-content-container container">
+            <div class="row">
+              <div class="col-12">
+                <div class="block-title text-uppercase">
+                    Related Content
+                </div>
+              </div>
+            </div>
+          </div>
+          
+      <div class="field field--name-field-related-content field--type-entity-reference field--label-hidden field__items">
+              <div class="field__item">
+
+<article class="node py-2 node--type-blog node--view-mode-related-content clearfix">
+  <div class="clearfix">
+    <div class="node-content-container container">
+      <div class="row">
+                                            <div class="col-12">
+            <div class="node--type text-uppercase">
+              Blog
+            </div>
+            <div class="node--title">
+              <a href="/state-of-security/alerts-action-how-ai-empowers-soc-analysts-make-better-decisions" rel="bookmark">From Alerts to Action: How AI Empowers SOC Analysts to Make Better Decisions </a>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</article>
+</div>
+              <div class="field__item">
+
+<article class="node py-2 node--type-blog node--view-mode-related-content clearfix">
+  <div class="clearfix">
+    <div class="node-content-container container">
+      <div class="row">
+                                            <div class="col-12">
+            <div class="node--type text-uppercase">
+              Blog
+            </div>
+            <div class="node--title">
+              <a href="/state-of-security/challenges-scaling-soc-operations-and-how-overcome-them" rel="bookmark">7 Challenges in Scaling SOC Operations and How to Overcome Them</a>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</article>
+</div>
+              <div class="field__item">
+
+<article class="node py-2 node--type-blog node--view-mode-related-content clearfix">
+  <div class="clearfix">
+    <div class="node-content-container container">
+      <div class="row">
+                                            <div class="col-12">
+            <div class="node--type text-uppercase">
+              Blog
+            </div>
+            <div class="node--title">
+              <a href="/state-of-security/do-you-work-soc-noise-factory" rel="bookmark">Do you Work in a SOC Noise Factory?</a>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</article>
+</div>
+          </div>
+  
+        </div>
+        
+            <div class="field field--name-field-sidebar-ad field--type-entity-reference-revisions field--label-hidden field__item">
+
+      <div class="paragraph paragraph--type--sidebar-ad paragraph--view-mode--default">
+      <a class="sidebar--cta" href="https://info.tripwire.com/state-of-security-subscription-center">
+        
+            <div class="field field--name-field-ad-image field--type-entity-reference field--label-hidden field__item"><div class="media-default">
+  
+  
+  <div class="field field--name-field-media-image field--type-image field--label-visually_hidden">
+    <div class="field__label visually-hidden">Image</div>
+              <div class="field__item">  <img loading="lazy" src="/sites/default/files/2024-04/state-of-security-sidebar-cta-2.png" width="657" height="409" alt="Join over 20,000 IT security pros who get our top stories delivered to their inbox every week!" />
+
+</div>
+          </div>
+
+</div>
+</div>
+      
+      </a>
+    </div>
+  </div>
+      
+</div>
+                </div>
+    </div>
+  </div>
+</article>
+
+    </div>
+  </div>
+
+
+              </main>
+                </div>
+  </div>
+</div>
+    </div>
+        <footer class="site-footer footer container-fluid">
+              <div id="footer-center">
+          <div class="region region-footer">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-2 text-left text-lg-center p-3 p-lg-0 pl-lg-4">
+                  <a class="logo" href="https://www.fortra.com" title="Home">
+                    <img src="/themes/custom/fortra_parent_2022/images/logo.svg" alt="Fortra logo"/>
+                  </a>
+                </div>
+                <div class="col-lg-8 offset-lg-1 text-center">
+                                        <div id="block-footersocialicons-2" class="block block-block-content block-block-content547a2516-afb3-4202-841d-ba37f8b5ad96">
+  
+    
+      <div class="content">
+            <div class="row">
+<div class="col-md-7">
+<div class="container-fluid">
+<ul class="row icons" itemscope itemtype="https://schema.org/Organization">
+<li class="col footer-icon"><a href="tel:+1 800-328-1000"><span class="icon"><i class="fal fa-phone-volume" aria-hidden="true"></i> </span>  <span class="text comm-links" id="comm-links-telephone">+1 800-328-1000</span></a></li>
+<li class="col footer-icon"><a href="/cdn-cgi/l/email-protection#50393e363f10363f222422317e333f3d" itemprop="email"><span class="icon"><i class="fal fa-envelope" aria-hidden="true"></i></span>  <span class="text comm-links" id="comm-links-email">Email Us</span></a></li>
+<li class="col footer-icon"><a href="/support" xml:lang="en" hreflang="en"><span class="icon"><i class="fal fa-headset" aria-hidden="true"></i></span> <span class="text comm-links" id="comm-links-support">Request Support</span></a></li>
+</ul>
+</div>
+</div>
+<div class="col-md-5"><div class="container-fluid">
+<ul class="row icons" itemscope itemtype="https://schema.org/Organization">
+                            <!--<li class="col-md footer-icon"><a href="/contact-us" itemprop="email"><span class="icon"><img src="/themes/custom/helpsystems/images/Email-Icon.svg" alt="Email Core Security"></span>  <span class="text comm-links" id="comm-links-email">Email Us</span></a></li>-->
+                            <li class="col footer-icon social tw"><a href="https://twitter.com/tripwireinc" class="toplink" target="_blank"><i class="icon fab fa-x-twitter" aria-hidden="true"></i><span class="text comm-links" id="comm-links-twitter">X</span> <span class="text sr-only">Find us on
+                              X</span></a></li>
+                            <li class="col footer-icon social in"><a href="https://www.linkedin.com/company/tripwire/ class=" target="_blank"><i class="icon fab fa-linkedin-in" aria-hidden="true"></i><span class="text comm-links" id="comm-links-linkedin-in">LinkedIn</span> <span class="text sr-only">Find us on
+                              LinkedIn</span></a></li>
+                            <li class="col footer-icon social fb"><a href="https://www.youtube.com/user/tripwireinc" class="toplink" target="_blank"><i class="icon fab fa-youtube" aria-hidden="true"></i><span class="text comm-links" id="comm-links-youtube">Youtube</span> <span class="text sr-only">Find us on
+                              Youtube</span></a></li>
+                           <li class="col footer-icon social fb"><a href="https://www.reddit.com/r/Fortra/" class="toplink" target="_blank"><i class="icon fab fa-reddit" aria-hidden="true"></i><span class="text comm-links" id="comm-links-reddit">Reddit</span> <span class="text sr-only">Find us on Reddit</span></a></li>
+                        </ul>
+</div></div></div>
+  
+
+
+    </div>
+  </div>
+
+
+                                    
+                </div>
+
+              </div>
+              <div class="footer-menu">
+                                        <nav role="navigation" aria-labelledby="block-footer-menu" id="block-footer" class="block block-menu navigation menu--footer main-menu navbar navbar-expand-xl">
+            
+  <div class="sr-only" id="block-footer-menu">Footer menu</div>
+  
+
+        
+                  <div  region="footer_middle" class="clearfix row footer-menu row-eq-height w-100">
+                                    <div class="menu-item--expanded col-lg">
+      
+                        
+                    <h3>          <a href="/products" class="nav-link  " data-drupal-link-system-path="node/24239">Products &amp; Services</a>
+          </h3>                                    <ul class="menu list-unstyled d-none d-lg-block">
+                            <li>
+
+      
+                        
+                              <a href="https://www.tripwire.com/products/tripwire-enterprise" class="nav-link  ">Tripwire Enterprise</a>
+                                </li>
+                              <li>
+
+      
+                        
+                              <a href="/products/tripwire-ip360" class="nav-link  " data-drupal-link-system-path="node/24240">Tripwire IP360</a>
+                                </li>
+                              <li>
+
+      
+                        
+                              <a href="/products/tripwire-logcenter" class="nav-link  " data-drupal-link-system-path="node/24720">Tripwire LogCenter</a>
+                                </li>
+                              <li>
+
+      
+                        
+                              <a href="/products/tripwire-expertops" class="nav-link  " data-drupal-link-system-path="node/24242">Tripwire ExpertOps</a>
+                                </li>
+                              <li>
+
+      
+                        
+                              <a href="/services" class="nav-link  " data-drupal-link-system-path="node/24670">Services</a>
+                                </li>
+                              <li>
+
+      
+                        
+                              <a href="/products" class="nav-link  " data-drupal-link-system-path="node/24239">View All Products</a>
+                                </li>
+                              <li>
+
+      
+                        
+                              <a href="/products/fortra" class="nav-link  " data-drupal-link-system-path="node/29834">Fortra Products</a>
+                                </li>
+                  </ul>
+      
+                      </div>
+                                      <div class="menu-item--expanded col-lg">
+      
+                        
+                    <h3>          <a href="/solutions" class="nav-link  " data-drupal-link-system-path="node/24259">Solutions</a>
+          </h3>                                    <ul class="menu list-unstyled d-none d-lg-block">
+                            <li>
+
+      
+                        
+                              <a href="/solutions" class="nav-link  " data-drupal-link-system-path="node/24259">By Security Need</a>
+                                </li>
+                              <li>
+
+      
+                        
+                              <a href="/solutions/compliance" class="nav-link  " data-drupal-link-system-path="node/24686">By Compliance Need</a>
+                                </li>
+                              <li>
+
+      
+                        
+                              <a href="/industries" class="nav-link  " data-drupal-link-system-path="node/24289">By Industry</a>
+                                </li>
+                  </ul>
+      
+                      </div>
+                                      <div class="menu-item--expanded col-lg">
+      
+                        
+                    <h3>          <a href="/resources" class="nav-link  " data-drupal-link-system-path="resources">Resources</a>
+          </h3>                                    <ul class="menu list-unstyled d-none d-lg-block">
+                            <li>
+
+      
+                        
+                              <a href="/resources?f%5B0%5D=type%3A1333&amp;f%5B1%5D=type%3A1340&amp;f%5B2%5D=type%3A1341" class="nav-link  " data-drupal-link-query="{&quot;f&quot;:[&quot;type:1333&quot;,&quot;type:1340&quot;,&quot;type:1341&quot;]}" data-drupal-link-system-path="resources">Upcoming Events</a>
+                                </li>
+                              <li>
+
+      
+                        
+                              <a href="/resources?f%5B0%5D=type%3A1342" class="nav-link  " data-drupal-link-query="{&quot;f&quot;:[&quot;type:1342&quot;]}" data-drupal-link-system-path="resources">On-Demand Webinars</a>
+                                </li>
+                              <li>
+
+      
+                        
+                              <a href="/resources?f%5B0%5D=type%3A1335" class="nav-link  " data-drupal-link-query="{&quot;f&quot;:[&quot;type:1335&quot;]}" data-drupal-link-system-path="resources">Datasheets</a>
+                                </li>
+                              <li>
+
+      
+                        
+                              <a href="/services/training" class="nav-link  " data-drupal-link-system-path="node/24680">Training</a>
+                                </li>
+                              <li>
+
+      
+                        
+                              <a href="https://www.tripwire.com/pricing" class="nav-link  ">Request a Quote</a>
+                                </li>
+                              <li>
+
+      
+                        
+                              <a href="https://www.tripwire.com/demo" class="nav-link  ">Start a Demo</a>
+                                </li>
+                  </ul>
+      
+                      </div>
+                                      <div class="menu-item--expanded col-lg">
+      
+                        
+                    <h3>          <a href="/about" class="nav-link  " data-drupal-link-system-path="node/24272">About</a>
+          </h3>                                    <ul class="menu list-unstyled d-none d-lg-block">
+                            <li>
+
+      
+                        
+                              <a href="https://www.fortra.com/" class="nav-link  ">Fortra</a>
+                                </li>
+                              <li>
+
+      
+                        
+                              <a href="/about/patents" class="nav-link  " data-drupal-link-system-path="node/24275">Patents</a>
+                                </li>
+                              <li>
+
+      
+                        
+                              <a href="https://customers.tripwire.com/customers" target="_blank" class="nav-link  ">Customer Support</a>
+                                </li>
+                              <li>
+
+      
+                        
+                              <a href="https://www.fortra.com/security/report" target="_blank" class="nav-link  ">Report a Vulnerability</a>
+                                </li>
+                              <li>
+
+      
+                        
+                              <a href="/cdn-cgi/l/email-protection#9af3f4fcf5dafcf5e8eee8fbb4f9f5f7a5e9eff8f0fff9eea7eee8f3eaedf3e8ffb7edfff8e9f3eeff" class="nav-link  "><span class="__cf_email__" data-cfemail="620b0c040d22040d101610034c010d0f">[email&#160;protected]</span></a>
+                                </li>
+                  </ul>
+      
+                      </div>
+                  </div>
+      
+
+
+
+  </nav>
+
+
+                              </div>
+              <div class="row copyright">
+                <div class="col">
+                                        <section class="row region region-footer-bottom">
+    <div id="block-footercopyright" class="block block-block-content block-block-contentcc7dac8f-10b8-4d21-996d-c6894e7edcf0">
+  
+    
+      <div class="content">
+            <div class="col">
+                        <h3 class="d-inline-block"><a href="/contact-us">Contact Information</a></h3>
+                        <h3 class="d-inline-block"><a href="https://www.fortra.com/privacy-policy">Privacy Policy</a></h3>
+                        <h3 class="d-inline-block"><a href="https://www.fortra.com/cookie-policy">Cookie Policy</a></h3>
+<h3 class="d-inline-block"><div id="teconsent"></div></h3>
+                        <h3 class="d-inline-block"><a href="https://www.fortra.com/impressum">Impressum</a></h3>
+                        Copyright © Fortra, LLC and its group of companies. Fortra®, the Fortra® logos, and other identified marks are proprietary trademarks of Fortra, LLC.
+                    </div>
+  
+
+
+    </div>
+  </div>
+
+  </section>
+
+                                                    </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          </footer>
+  </div>
+</div>
+
+  </div>
+
+  
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/25381","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxTrustedUrl":{"\/search":true},"user":{"uid":0,"permissionsHash":"32162761d5973478213b4d717a12e1db6e518ba84d6704f5c1944cd686340ec4"}}</script>
+<script src="/core/assets/vendor/jquery/jquery.min.js?v=3.7.1"></script>
+<script src="/core/assets/vendor/once/once.min.js?v=1.0.1"></script>
+<script src="/core/misc/drupalSettingsLoader.js?v=10.4.5"></script>
+<script src="/core/misc/drupal.js?v=10.4.5"></script>
+<script src="/core/misc/drupal.init.js?v=10.4.5"></script>
+<script src="/core/misc/debounce.js?v=10.4.5"></script>
+<script src="/modules/composer/better_exposed_filters/js/auto_submit.js?v=6.x"></script>
+<script src="/modules/composer/better_exposed_filters/js/better_exposed_filters.js?v=6.x"></script>
+<script src="/themes/composer/bootstrap_barrio/js/barrio.js?v=10.4.5"></script>
+<script src="/themes/composer/bootstrap_barrio/js/affix.js?v=10.4.5"></script>
+<script src="/themes/custom/fortra_parent_2022/js/popper.min.js?sw7v1l"></script>
+<script src="/themes/custom/fortra_parent_2022/js/accessible-nav.js?sw7v1l"></script>
+<script src="/themes/custom/fortra_parent_2022/js/bootstrap.min.js?sw7v1l"></script>
+<script src="/themes/custom/fortra_parent_2022/js/faqs.js?sw7v1l"></script>
+<script src="/themes/custom/fortra_parent_2022/js/global.js?v=10.1.3"></script>
+<script src="/themes/custom/fortra_parent_2022/js/iframeResizer.min.js?v=10.1.3"></script>
+<script src="/themes/custom/fortra_parent_2022/js/pardot-iframe.js?v=10.1.3"></script>
+<script src="/themes/custom/fortra_parent_2022/js/widget.js?v=10.1.3"></script>
+<script src="/themes/custom/fortra_parent_2022/js/widget-code.js?v=10.1.3"></script>
+<script src="https://static.addtoany.com/menu/page.js"></script>
+<script src="/themes/custom/tripwire/js/global.js?v=10.4.5"></script>
+
+</body>
+</html>
