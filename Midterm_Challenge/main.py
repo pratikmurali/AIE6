@@ -4,8 +4,11 @@ from typing import TypedDict, Annotated, List
 from dotenv import load_dotenv
 import asyncio
 
+# Import S3 utilities
+from s3_utils import download_and_read_s3_documents
+
 # Import LangChain components
-from langchain.document_loaders import PyMuPDFLoader
+from langchain_community.document_loaders import PyMuPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_community.vectorstores import Qdrant
@@ -36,43 +39,11 @@ text_splitter = RecursiveCharacterTextSplitter(
     length_function=tiktoken_len,
 )
 
-# Function to read PDF documents
-def read_pdf_documents(docs_dir: str = "docs") -> List:
-    """
-    Read PDF documents from the specified directory and extract their text content.
-    
-    Args:
-        docs_dir (str): Path to directory containing PDF documents
-        
-    Returns:
-        List: List of extracted text content from PDFs
-    """
-    documents = []
-    
-    # Check if directory exists
-    if not os.path.exists(docs_dir):
-        print(f"Directory {docs_dir} does not exist.")
-        return documents
-    
-    # Iterate through files in docs directory
-    for filename in os.listdir(docs_dir):
-        if filename.endswith(".pdf"):
-            pdf_path = os.path.join(docs_dir, filename)
-            
-            try:
-                temp_doc = PyMuPDFLoader(pdf_path).load()
-                documents.extend(temp_doc)
-                print(f"Loaded doc: {filename}")
-                
-            except Exception as e:
-                print(f"Error reading {filename}: {str(e)}")
-                
-    return documents
 
 # Global variables to store vectorstores, chains, and model
 qdrant_vectorstore = None
 cyber_security_qdrant_vectorstore = None
-rag_chain = None
+fda_regulatory_rag_chain = None
 cyber_security_rag_chain = None
 compiled_regulatory_framework_graph = None
 model = None
@@ -88,7 +59,7 @@ def retrieve_fda_information(
     3. Quality Management (QMS) systems 
     4. Reporting gaps in FDA-approved AI medical devices
     """
-    return rag_chain.invoke({"question": query})
+    return fda_regulatory_rag_chain.invoke({"question": query})
 
 # Create the cybersecurity information retrieval tool
 @tool
@@ -117,14 +88,19 @@ def call_model(state):
 
 # Initialize resources and create the graph
 async def initialize_resources():
-    global qdrant_vectorstore, cyber_security_qdrant_vectorstore, rag_chain, cyber_security_rag_chain, model, compiled_regulatory_framework_graph
+    global qdrant_vectorstore, cyber_security_qdrant_vectorstore, fda_regulatory_rag_chain, cyber_security_rag_chain, model, compiled_regulatory_framework_graph
+    
+    if not os.getenv("OPENAI_API_KEY"):
+            print("WARNING: OPENAI_API_KEY is not set. The app may not function correctly.")
+            raise ValueError("OPENAI_API_KEY environment variable is not set")
     
     # Set up the embedding model
     embedding_model = OpenAIEmbeddings(model="text-embedding-3-large")
     
-    # Load FDA documents
-    print("Loading FDA documents...")
-    pdf_documents = read_pdf_documents()
+    # Load FDA documents from S3 bucket
+    print("Loading FDA documents from S3...")
+    pdf_documents = download_and_read_s3_documents(bucket_name="fda-samd-regulatory-guidance")
+    
     if pdf_documents:
         split_chunks = text_splitter.split_documents(pdf_documents)
         
@@ -147,57 +123,52 @@ async def initialize_resources():
     
         You are a helpful FDA Auditor. Use the available context to answer the question. If you can't answer the question, say you don't know.
         """
-        rag_prompt = ChatPromptTemplate.from_template(RAG_PROMPT)
+        fda_regulatory_rag_prompt = ChatPromptTemplate.from_template(RAG_PROMPT)
         openai_chat_model = ChatOpenAI(model="gpt-4o-mini")
-        rag_chain = (
+        fda_regulatory_rag_chain = (
             {"context": itemgetter("question") | qdrant_retriever, "question": itemgetter("question")}
-            | rag_prompt | openai_chat_model | StrOutputParser()
+            | fda_regulatory_rag_prompt | openai_chat_model | StrOutputParser()
         )
     else:
         # If no documents are found, create a simple response chain
-        rag_chain = lambda x: "I don't have information on that topic yet. Please add FDA regulatory documents to the docs folder."
+        fda_regulatory_rag_chain = lambda x: "I couldn't access FDA regulatory documents from the S3 bucket. Please check the S3 bucket configuration."
     
-    # Load cybersecurity documents
-    print("Loading cybersecurity documents...")
-    cybersecurity_docs_dir = "docs/cybersecurity"
-    if os.path.exists(cybersecurity_docs_dir):
-        pdf_documents = read_pdf_documents(docs_dir=cybersecurity_docs_dir)
-        if pdf_documents:
-            cyber_security_split_chunks = text_splitter.split_documents(pdf_documents)
-            
-            # Create cybersecurity vectorstore
-            cyber_security_qdrant_vectorstore = Qdrant.from_documents(
-                cyber_security_split_chunks,
-                embedding_model,
-                location=":memory:",
-                collection_name="cybersecurity_requirements",
-            )
-            cyber_security_qdrant_retriever = cyber_security_qdrant_vectorstore.as_retriever()
-            
-            # Create cybersecurity RAG prompt and chain
-            CYBER_RAG_PROMPT = """
-            CONTEXT:
-            {context}
+    # Load cybersecurity documents from S3 bucket
+    print("Loading cybersecurity documents from S3...")
+    cyber_security_pdf_documents = download_and_read_s3_documents(bucket_name="fda-samd-cybersecurity-guidance")
     
-            QUERY:
-            {question}
-    
-            You are a helpful Cybersecurity Expert in the field of FDA Software as a Medical Device. Use the available context to answer the question. 
-            If you can't answer the question, say you don't know.
-            """
-            cyber_security_rag_prompt = ChatPromptTemplate.from_template(CYBER_RAG_PROMPT)
-            cyber_security_openai_chat_model = ChatOpenAI(model="gpt-4o-mini")
-            cyber_security_rag_chain = (
-                {"context": itemgetter("question") | cyber_security_qdrant_retriever, "question": itemgetter("question")}
-                | cyber_security_rag_prompt | cyber_security_openai_chat_model | StrOutputParser()
-            )
-        else:
-            # If no documents are found, create a simple response chain
-            cyber_security_rag_chain = lambda x: "I don't have information on cybersecurity topics yet. Please add cybersecurity documents to the docs/cybersecurity folder."
+    if cyber_security_pdf_documents:
+        cyber_security_split_chunks = text_splitter.split_documents(cyber_security_pdf_documents)
+        
+        # Create cybersecurity vectorstore
+        cyber_security_qdrant_vectorstore = Qdrant.from_documents(
+            cyber_security_split_chunks,
+            embedding_model,
+            location=":memory:",
+            collection_name="cybersecurity_requirements",
+        )
+        cyber_security_qdrant_retriever = cyber_security_qdrant_vectorstore.as_retriever()
+        
+        # Create cybersecurity RAG prompt and chain
+        CYBER_RAG_PROMPT = """
+        CONTEXT:
+        {context}
+
+        QUERY:
+        {question}
+
+        You are a helpful Cybersecurity Expert in the field of FDA Software as a Medical Device. Use the available context to answer the question. 
+        If you can't answer the question, say you don't know.
+        """
+        cyber_security_rag_prompt = ChatPromptTemplate.from_template(CYBER_RAG_PROMPT)
+        cyber_security_openai_chat_model = ChatOpenAI(model="gpt-4o-mini")
+        cyber_security_rag_chain = (
+            {"context": itemgetter("question") | cyber_security_qdrant_retriever, "question": itemgetter("question")}
+            | cyber_security_rag_prompt | cyber_security_openai_chat_model | StrOutputParser()
+        )
     else:
-        print(f"Directory {cybersecurity_docs_dir} does not exist.")
-        # If no directory exists, create a simple response chain
-        cyber_security_rag_chain = lambda x: "I don't have information on cybersecurity topics yet. Please create the docs/cybersecurity folder and add relevant documents."
+        # If no documents are found, create a simple response chain
+        cyber_security_rag_chain = lambda x: "I couldn't access cybersecurity documents from the S3 bucket. Please check the S3 bucket configuration."
     
     # Create the model and bind tools
     tool_belt = [
@@ -232,8 +203,11 @@ async def initialize_resources():
 
 @cl.on_chat_start
 async def on_chat_start():
+    # Set up the profile for the assistant
+    cl.user_session.set("author", "FDA Assistant")
+    
     # Show loading message
-    loading_msg = cl.Message(content="Initializing FDA Regulatory Assistant... Loading documents and setting up knowledge base. This may take a minute.")
+    loading_msg = cl.Message(content="Initializing FDA Regulatory Assistant for Software as a Medical Device (SaMD)... Loading documents and setting up knowledge base. This may take a minute.")
     await loading_msg.send()
     
     # Initialize resources
@@ -241,10 +215,13 @@ async def on_chat_start():
     
     # Update loading message with completion
     await loading_msg.remove()
-    await cl.Message(content="FDA Regulatory Assistant initialized and ready to help!").send()
+    await cl.Message(content="FDA Regulatory Assistant for Software as a Medical Device (SaMD) initialized and ready to help!").send()
     
     # Send welcome message
-    await cl.Message(content="I'm your FDA Regulatory Assistant. Ask me about Software as a Medical Device (SaMD) regulations, requirements, or cybersecurity considerations.").send()
+    await cl.Message(
+        content="I'm your FDA Regulatory Assistant. Ask me about Software as a Medical Device (SaMD) regulations, requirements, or cybersecurity considerations.",
+        author="FDA Assistant"
+    ).send()
 
 @cl.on_message
 async def on_message(message: cl.Message):
@@ -252,7 +229,10 @@ async def on_message(message: cl.Message):
     human_message = HumanMessage(content=query)
     
     # Initialize response message
-    response_message = cl.Message(content="")
+    response_message = cl.Message(
+        content="",
+        author="FDA Assistant"
+    )
     await response_message.send()
     
     # Create inputs for the graph

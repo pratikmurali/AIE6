@@ -1,0 +1,15 @@
+# Chainlit configuration
+
+# UI customization
+ui:
+  # Custom avatar
+  avatar: https://raw.githubusercontent.com/pratikmurali/AIE6/532afaab8fd372088c99188bd6ee3f361fe78469/Midterm_Challenge/public/auditor.png
+
+# App information
+name: SAMD Regulatory Assistant
+description: FDA Regulatory Assistant for Software as a Medical Device (SaMD)
+
+# Theme (optional)
+theme:
+  # Primary color
+  primary_color: "#4B7BF5" 
