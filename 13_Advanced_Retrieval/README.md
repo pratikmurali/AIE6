@@ -1,4 +1,4 @@
-<p align = "center" draggable=”false” ><img src="https://github.com/AI-Maker-Space/LLM-Dev-101/assets/37101144/d1343317-fa2f-41e1-8af1-1dbb18399719"
+<p align = "center" draggable=”false” ><img src="https://github.com/AI-Maker-Space/LLM-Dev-101/assets/37101144/d1343317-fa2f-41e1-8af1-1dbb18399719" 
      width="200px"
      height="auto"/>
 </p>
@@ -11,7 +11,7 @@
 ### Steps to Run:
 
 1. Run `uv sync`
-2. Run through the notebook.
+2. Run through the notebook. 
 
 # Build 🏗️
 
@@ -33,7 +33,7 @@ Implement [RAG-Fusion](https://arxiv.org/pdf/2402.03367) using the LangChain eco
 
 # Ship 🚢
 
-- The completed notebook.
+- The completed notebook. 
 - 5min. Loom Video
 
 # Share 🚀
@@ -41,40 +41,3 @@ Implement [RAG-Fusion](https://arxiv.org/pdf/2402.03367) using the LangChain eco
 - Make a social media post about your final application and tag @AIMakerspace
 - Share 3 lessons learned
 - Share 3 lessons not learned
-
-# Retriever Evaluation with Ragas and LangSmith 📊
-
-This notebook includes a comprehensive evaluation of different retrieval methods using:
-
-1. **Ragas Metrics**:
-   - LLMContextRecall: Measures how well the retrieved context covers the information needed to answer the question
-   - Faithfulness: Measures how factually consistent the generated answer is with the retrieved context
-   - FactualCorrectness: Evaluates the factual accuracy of the generated answer
-   - ResponseRelevancy: Measures how relevant the generated answer is to the question
-   - ContextEntityRecall: Evaluates how well the retrieved context captures the entities mentioned in the question
-   - NoiseSensitivity: Measures the robustness of the retrieval system to noise in the input
-
-2. **LangSmith Tracing**:
-   - Each retriever is wrapped with the `@traceable` decorator to track:
-     - Latency: How long each retrieval method takes
-     - Token usage: How many tokens are consumed by each method
-     - Execution details: Full trace of the retrieval process
-
-3. **Visualization**:
-   - Bar charts comparing each Ragas metric across retrievers
-   - Latency comparison across retrievers
-   - Token usage comparison across retrievers
-   - Summary table with all metrics
-
-## Running the Evaluation
-
-To run the evaluation:
-1. Make sure all dependencies are installed: `uv sync`
-2. Run through the notebook cells sequentially
-3. When you reach the evaluation section, the code will:
-   - Run each retriever on the evaluation dataset
-   - Calculate Ragas metrics for each retriever
-   - Collect LangSmith traces for performance analysis
-   - Generate visualizations for comparison
-
-The evaluation results will help you understand the strengths and weaknesses of each retrieval method and make informed decisions about which one to use for your specific use case.
