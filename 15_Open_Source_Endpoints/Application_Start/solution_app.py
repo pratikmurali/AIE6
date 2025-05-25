@@ -163,7 +163,7 @@ async def start_chat():
 
     lcel_rag_chain = (
         {"context": itemgetter("query") | hf_retriever, "query": itemgetter("query")}
-        | rag_prompt | hf_llm
+        | rag_prompt | hf_llm 
     )
 
     cl.user_session.set("lcel_rag_chain", lcel_rag_chain)
